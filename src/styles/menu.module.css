@@ -1,0 +1,37 @@
+.container {
+  margin-top: 3rem;
+  display: grid;
+  min-height: 90vh;
+  gap: 30px;
+  justify-items: center;
+}
+
+.menuItem div {
+  height: 100%;
+}
+.menuItem a {
+  color: white;
+  font-size: xx-large;
+  text-transform: capitalize;
+}
+
+.menuItem a:hover {
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+.menuItem:nth-child(1) {
+  background-color: darkred;
+}
+
+.menuItem:nth-child(2) {
+  background-color: rgb(202, 114, 13);
+}
+
+.menuItem:nth-child(3) {
+  background-color: rgb(4, 95, 60);
+}
+
+.menuItem:nth-child(4) {
+  background-color: rgb(47, 10, 117);
+}
