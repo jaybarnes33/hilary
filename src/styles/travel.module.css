@@ -1,6 +1,19 @@
 .travel {
   width: 100%;
+  display: flex;
+
+  padding-top: 15vh;
+}
+
+.travel form {
+  width: 500px;
   display: grid;
   place-items: center;
-  min-height: 100vh;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
 }

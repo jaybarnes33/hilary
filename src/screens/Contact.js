@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Button, Container, Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import countries from "../data/countries";
+
 import styles from "../styles/travel.module.css";
 import fetchPrev from "../utils/fetchPrev";
 
-const Travel = ({ history }) => {
+const Contact = ({ history }) => {
   const { goBack } = useHistory();
   const [data, setData] = useState({});
 
-  const [travelData, setTravelData] = useState({
-    travel: false,
-    country: "",
+  const [contactData, setContactData] = useState({
+    contact: false,
+    type: "",
   });
 
   useEffect(() => {
@@ -20,19 +20,22 @@ const Travel = ({ history }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setTravelData((prevState) => ({
+    setContactData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
 
   const handleSubmit = () => {
-    sessionStorage.setItem("covid", JSON.stringify({ ...data, ...travelData }));
+    sessionStorage.setItem(
+      "covid",
+      JSON.stringify({ ...data, ...contactData })
+    );
   };
 
   const handleNext = (next) => {
     handleSubmit();
-    console.log(travelData);
+    console.log(contactData);
     history.push(`/${next}`);
   };
 
@@ -44,20 +47,20 @@ const Travel = ({ history }) => {
     <div className={styles.travel}>
       <Form>
         <>
-          Any recent travel?
+          Any recent contact with COVID-19 patient?
           <br />
-          <div className=" ">
+          <div>
             <Form.Group>
               <label htmlFor="yes" className="py-2 mb-1 mr-2">
                 Yes
               </label>
               <Form.Check
-                id="yes"
                 type="radio"
-                name="travel"
+                name="contact"
                 className="mr-2"
                 value={true}
                 onChange={handleChange}
+                required
               />
             </Form.Group>
             <Form.Group>
@@ -66,34 +69,43 @@ const Travel = ({ history }) => {
               </label>
               <Form.Check
                 type="radio"
-                name="travel"
+                name="contact"
                 value={false}
                 onChange={handleChange}
                 required
               />
             </Form.Group>
           </div>
-          {travelData.travel && (
-            <Form.Control
-              name="country"
-              as="select"
-              value={travelData.country}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Select a country</option>
-              {countries.map((country) => (
-                <option value={country.name} key={country.name}>
-                  {country.emoji} {country.name}
-                </option>
-              ))}
-            </Form.Control>
+          {contactData.contact && (
+            <>
+              {" "}
+              <Form.Group>
+                <Form.Check
+                  type="radio"
+                  name="type"
+                  label="Contact with COVID-19 suspected case?"
+                  value="Contact with COVID-19 suspected case."
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Check
+                  type="radio"
+                  name="type"
+                  label="Contact with COVID-19 positive case?"
+                  value="Contact with COVID-19 positive case."
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+            </>
           )}
           <div className={styles.buttons}>
             <Button className="mr-4 next" onClick={handlePrev}>
               Previous
             </Button>
-            <Button className="next" onClick={() => handleNext("contact")}>
+            <Button className="next" onClick={() => handleNext("symptoms")}>
               Next
             </Button>
           </div>
@@ -103,4 +115,4 @@ const Travel = ({ history }) => {
   );
 };
 
-export default Travel;
+export default Contact;

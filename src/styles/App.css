@@ -1,1 +1,11 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+.form-group {
+  margin: 1rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid black;
+  display: flex;
+  text-align: right;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 300px;
+}
