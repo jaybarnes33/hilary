@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import Header from "../components/Header";
 
 import styles from "../styles/travel.module.css";
 import fetchPrev from "../utils/fetchPrev";
@@ -11,7 +12,8 @@ const Contact = ({ history }) => {
 
   const [contactData, setContactData] = useState({
     contact: false,
-    type: "",
+    positive: false,
+    suspect: false,
   });
 
   useEffect(() => {
@@ -45,6 +47,11 @@ const Contact = ({ history }) => {
   };
   return (
     <div className={styles.travel}>
+      <Header
+        variant="danger"
+        title="Contact"
+        icon={<i className="bi bi-phone"></i>}
+      />
       <Form>
         <>
           Any recent contact with COVID-19 patient?
@@ -82,9 +89,9 @@ const Contact = ({ history }) => {
               <Form.Group>
                 <Form.Check
                   type="radio"
-                  name="type"
+                  name="suspect"
                   label="Contact with COVID-19 suspected case?"
-                  value="Contact with COVID-19 suspected case."
+                  value={true}
                   onChange={handleChange}
                   required
                 />
@@ -92,9 +99,9 @@ const Contact = ({ history }) => {
               <Form.Group>
                 <Form.Check
                   type="radio"
-                  name="type"
+                  name="positive"
                   label="Contact with COVID-19 positive case?"
-                  value="Contact with COVID-19 positive case."
+                  value={true}
                   onChange={handleChange}
                   required
                 />
@@ -102,10 +109,18 @@ const Contact = ({ history }) => {
             </>
           )}
           <div className={styles.buttons}>
-            <Button className="mr-4 next" onClick={handlePrev}>
-              Previous
+            <Button
+              variant="success"
+              className="mr-4 next"
+              onClick={handlePrev}
+            >
+              Back
             </Button>
-            <Button className="next" onClick={() => handleNext("symptoms")}>
+            <Button
+              variant="success"
+              className="next"
+              onClick={() => handleNext("symptoms")}
+            >
               Next
             </Button>
           </div>

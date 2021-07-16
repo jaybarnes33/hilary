@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import Header from "../components/Header";
 import countries from "../data/countries";
 import styles from "../styles/travel.module.css";
 import fetchPrev from "../utils/fetchPrev";
@@ -42,6 +43,11 @@ const Travel = ({ history }) => {
   };
   return (
     <div className={styles.travel}>
+      <Header
+        variant="warning"
+        title="Travel"
+        icon={<i className="bi bi-car"></i>}
+      />
       <Form>
         <>
           Any recent travel?
@@ -90,10 +96,18 @@ const Travel = ({ history }) => {
             </Form.Control>
           )}
           <div className={styles.buttons}>
-            <Button className="mr-4 next" onClick={handlePrev}>
-              Previous
+            <Button
+              variant="success"
+              className="mr-4 next"
+              onClick={handlePrev}
+            >
+              Back
             </Button>
-            <Button className="next" onClick={() => handleNext("contact")}>
+            <Button
+              variant="success"
+              className="next"
+              onClick={() => handleNext("contact")}
+            >
               Next
             </Button>
           </div>

@@ -1,19 +1,29 @@
 .travel {
+  padding: 10px;
+  box-sizing: border-box;
   width: 100%;
   display: flex;
-
+  justify-content: center;
   padding-top: 15vh;
+  overflow-x: hidden;
 }
 
 .travel form {
   width: 500px;
   display: grid;
   place-items: center;
+  padding: 10px;
 }
 
-.buttons {
-  position: absolute;
-  bottom: 1rem;
+.travel .buttons {
+  left: 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0.3rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.buttons .btn {
+  display: none;
 }

@@ -3,6 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import fetchPrev from "../utils/fetchPrev";
 import { useHistory } from "react-router-dom";
 import styles from "../styles/travel.module.css";
+import Header from "../components/Header";
 const Symptoms = ({ history }) => {
   const { goBack } = useHistory();
   const [data, setData] = React.useState({});
@@ -43,7 +44,8 @@ const Symptoms = ({ history }) => {
     goBack();
   };
   return (
-    <div>
+    <div className={styles.travel}>
+      <Header variant="success" title="Symptoms" />
       <Form>
         Showing any symptoms?
         <Form.Group>
@@ -117,10 +119,14 @@ const Symptoms = ({ history }) => {
           </div>
         )}
         <div className={styles.buttons}>
-          <Button className="mr-4 next" onClick={handlePrev}>
-            Previous
+          <Button variant="success" className="mr-4 next" onClick={handlePrev}>
+            Back
           </Button>
-          <Button className="next" onClick={() => handleNext("symptoms")}>
+          <Button
+            variant="success"
+            className="next"
+            onClick={() => handleNext("symptoms")}
+          >
             Next
           </Button>
         </div>
