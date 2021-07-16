@@ -38,10 +38,40 @@ const NextSteps = () => {
       </div>
       <div className="resources">
         {percent > 50 && (
-          <p className="result mt-2">
-            Based on your answers, there is a {percent}% chance that you are
-            infected, you are advised to visit your nearest health facility.
-          </p>
+          <>
+            <p className="result mt-2">
+              Based on your answers, there is a {percent}% chance that you are
+              infected, you are advised to visit your nearest health facility.
+            </p>
+
+            <p>For more information, visit these sites</p>
+            <ul>
+              <li>
+                <a
+                  target="blank"
+                  href="https://www.ghanahealthservice.org/covid19/"
+                >
+                  Ghana Health Service
+                </a>
+              </li>
+              <li>
+                <a
+                  target="blank"
+                  href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public?gclid=Cj0KCQjwub-HBhCyARIsAPctr7xROwzIAVLnkzOisB-LBlnC_AKpjs5YwSU4SvoVDNtrTofiuuCaBkwaAv8wEALw_wcB"
+                >
+                  World Health Organization
+                </a>
+              </li>
+              <li>
+                <a
+                  target="blank"
+                  href="https://wwwnc.cdc.gov/travel/notices/covid-1/coronavirus-ghana"
+                >
+                  CDC
+                </a>
+              </li>
+            </ul>
+          </>
         )}
       </div>
     </div>
