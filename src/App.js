@@ -6,6 +6,7 @@ import Menu from "./screens/Menu";
 import Travel from "./screens/Travel";
 import Contact from "./screens/Contact";
 import Symptoms from "./screens/Symptoms";
+import NextSteps from "./screens/NextSteps";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Route path="/travel" component={Travel} exact />
       <Route path="/contact" component={Contact} exact />
       <Route path="/symptoms" component={Symptoms} exact />
+      <Route path="/what-to-do" component={NextSteps} exact />
     </Router>
   );
 };

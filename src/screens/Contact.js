@@ -46,7 +46,7 @@ const Contact = ({ history }) => {
     goBack();
   };
   return (
-    <div className={styles.travel}>
+    <div className={styles.wrapper}>
       <Header
         variant="danger"
         title="Contact"

@@ -1,5 +1,5 @@
-.travel {
-  padding: 10px;
+.wrapper {
+  padding: 5rem 1rem;
   box-sizing: border-box;
   width: 100%;
   display: flex;
@@ -8,14 +8,14 @@
   overflow-x: hidden;
 }
 
-.travel form {
+.wrapper form {
   width: 500px;
   display: grid;
   place-items: center;
   padding: 10px;
 }
 
-.travel .buttons {
+.wrapper .buttons {
   left: 0;
   position: fixed;
   width: 100%;
@@ -26,4 +26,10 @@
 
 .buttons .btn {
   display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    flex-wrap: wrap;
+  }
 }

@@ -9,12 +9,10 @@ const Symptoms = ({ history }) => {
   const [data, setData] = React.useState({});
   const [isSymptoms, setIsSymptoms] = React.useState(false);
   const [symptoms, setSymptoms] = React.useState({
-    cough: false,
     drycough: false,
     tiredness: false,
     over60: false,
     healthworker: false,
-    none: false,
   });
 
   React.useEffect(() => {
@@ -44,7 +42,7 @@ const Symptoms = ({ history }) => {
     goBack();
   };
   return (
-    <div className={styles.travel}>
+    <div className={styles.wrapper}>
       <Header variant="success" title="Symptoms" />
       <Form>
         Showing any symptoms?
@@ -56,8 +54,8 @@ const Symptoms = ({ history }) => {
             type="radio"
             name="contact"
             className="mr-2"
-            value={true}
-            onChange={() => setIsSymptoms(true)}
+            value={!isSymptoms}
+            onChange={() => setIsSymptoms(!isSymptoms)}
             required
           />
         </Form.Group>
@@ -68,8 +66,8 @@ const Symptoms = ({ history }) => {
           <Form.Check
             type="radio"
             name="contact"
-            value={false}
-            onChange={() => setIsSymptoms(false)}
+            value={!isSymptoms}
+            onChange={() => setIsSymptoms(!isSymptoms)}
             required
           />
         </Form.Group>
@@ -99,7 +97,7 @@ const Symptoms = ({ history }) => {
             <Form.Group>
               <Form.Check
                 type="radio"
-                name="cough"
+                name="drycough"
                 label="Cough"
                 value={true}
                 onChange={handleChange}
@@ -116,6 +114,16 @@ const Symptoms = ({ history }) => {
                 required
               />
             </Form.Group>
+            <Form.Group>
+              <Form.Check
+                type="radio"
+                name="healthworker"
+                label="Healthworker"
+                value={true}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
           </div>
         )}
         <div className={styles.buttons}>
@@ -125,9 +133,9 @@ const Symptoms = ({ history }) => {
           <Button
             variant="success"
             className="next"
-            onClick={() => handleNext("symptoms")}
+            onClick={() => handleNext("what-to-do")}
           >
-            Next
+            Submit
           </Button>
         </div>
       </Form>
