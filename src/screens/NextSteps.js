@@ -16,7 +16,6 @@ const NextSteps = () => {
   const [location, setLocation] = React.useState({});
   React.useEffect(() => {
     setData(fetchPrev());
-    setLocation(getLocation());
   }, []);
   keys = Object.keys(data);
 
@@ -29,7 +28,6 @@ const NextSteps = () => {
   const percent = Math.round((count / keys.length) * 100);
   return (
     <div className={styles.wrapper}>
-      {console.log(location)}
       <Header title="Next Steps" variant="danger" />
       <div className="progress-wrapper mt-2">
         <CircularProgressbar
@@ -46,7 +44,8 @@ const NextSteps = () => {
 
       {percent >= 50 && (
         <>
-          <Map center={location} />
+          {" "}
+          <Map center={getLocation()} />
           <i className="bi bi-exclamation"></i>
           <p className="result mt-2">
             Based on your answers, there is a {percent}% chance that you are
