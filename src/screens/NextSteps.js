@@ -5,7 +5,7 @@ import styles from "../styles/travel.module.css";
 import Header from "../components/Header";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import Map from "../components/Map";
+
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -45,11 +45,11 @@ const NextSteps = () => {
       {percent >= 50 && (
         <>
           {" "}
-          <Map center={getLocation()} />
           <i className="bi bi-exclamation"></i>
           <p className="result mt-2">
             Based on your answers, there is a {percent}% chance that you are
-            infected, you are advised to visit the nearest health facility!
+            infected, you are advised to visit the nearest{" "}
+            <Link to="/map">health facility!</Link>
           </p>
         </>
       )}

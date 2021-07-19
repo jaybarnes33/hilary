@@ -8,6 +8,7 @@ import Contact from "./screens/Contact";
 import Symptoms from "./screens/Symptoms";
 import NextSteps from "./screens/NextSteps";
 import Resources from "./screens/Resources";
+import Map from "./screens/Map";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Route path="/symptoms" component={Symptoms} exact />
       <Route path="/what-to-do" component={NextSteps} exact />
       <Route path="/resources" component={Resources} exact />
+      <Route path="/map" component={Map} exact />
     </Router>
   );
 };
