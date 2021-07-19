@@ -14,6 +14,7 @@ header {
   height: 10vh;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   text-align: center;
   display: flex;
@@ -22,6 +23,7 @@ header {
   font-size: 2.5rem;
   padding: 1rem;
   color: #f4f4f4;
+  z-index: 9;
 }
 
 header .navbar {
@@ -36,4 +38,9 @@ header .navbar {
 
 body {
   overflow-x: hidden;
+}
+
+.bi-exclamation {
+  font-size: 5rem;
+  color: red;
 }

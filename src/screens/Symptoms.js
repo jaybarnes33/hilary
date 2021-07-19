@@ -54,8 +54,8 @@ const Symptoms = ({ history }) => {
             type="radio"
             name="contact"
             className="mr-2"
-            value={!isSymptoms}
-            onChange={() => setIsSymptoms(!isSymptoms)}
+            value={symptoms}
+            onChange={() => setIsSymptoms(true)}
             required
           />
         </Form.Group>
@@ -66,8 +66,8 @@ const Symptoms = ({ history }) => {
           <Form.Check
             type="radio"
             name="contact"
-            value={!isSymptoms}
-            onChange={() => setIsSymptoms(!isSymptoms)}
+            value={symptoms}
+            onChange={() => setIsSymptoms(false)}
             required
           />
         </Form.Group>
@@ -87,8 +87,28 @@ const Symptoms = ({ history }) => {
             <Form.Group>
               <Form.Check
                 type="radio"
+                name="sneezing"
+                label="Sneezing"
+                value={true}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Check
+                type="radio"
                 name="fever"
                 label="Fever"
+                value={true}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Check
+                type="radio"
+                name="sore-throat"
+                label="Sore Throat"
                 value={true}
                 onChange={handleChange}
                 required
@@ -109,6 +129,16 @@ const Symptoms = ({ history }) => {
                 type="radio"
                 name="tiredness"
                 label="Tiredness"
+                value={true}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Check
+                type="radio"
+                name="loss-of-smell"
+                label="Loss of smell and taste"
                 value={true}
                 onChange={handleChange}
                 required

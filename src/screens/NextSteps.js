@@ -1,19 +1,25 @@
 import React from "react";
 import fetchPrev from "../utils/fetchPrev";
+import getLocation from "../utils/getLocation";
 import styles from "../styles/travel.module.css";
 import Header from "../components/Header";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { Container } from "react-bootstrap";
+import Map from "../components/Map";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 const NextSteps = () => {
   let count = 0;
   let keys;
   const [data, setData] = React.useState({});
+  const [location, setLocation] = React.useState({});
   React.useEffect(() => {
     setData(fetchPrev());
+    setLocation(getLocation());
   }, []);
   keys = Object.keys(data);
-  console.log(keys.length);
+
   keys?.forEach((key) => {
     if (data[key] === "true") {
       count += 1;
@@ -23,6 +29,7 @@ const NextSteps = () => {
   const percent = Math.round((count / keys.length) * 100);
   return (
     <div className={styles.wrapper}>
+      {console.log(location)}
       <Header title="Next Steps" variant="danger" />
       <div className="progress-wrapper mt-2">
         <CircularProgressbar
@@ -36,43 +43,21 @@ const NextSteps = () => {
           })}
         />
       </div>
-      <div className="resources">
-        {percent > 50 && (
-          <>
-            <p className="result mt-2">
-              Based on your answers, there is a {percent}% chance that you are
-              infected, you are advised to visit your nearest health facility.
-            </p>
 
-            <p>For more information, visit these sites</p>
-            <ul>
-              <li>
-                <a
-                  target="blank"
-                  href="https://www.ghanahealthservice.org/covid19/"
-                >
-                  Ghana Health Service
-                </a>
-              </li>
-              <li>
-                <a
-                  target="blank"
-                  href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public?gclid=Cj0KCQjwub-HBhCyARIsAPctr7xROwzIAVLnkzOisB-LBlnC_AKpjs5YwSU4SvoVDNtrTofiuuCaBkwaAv8wEALw_wcB"
-                >
-                  World Health Organization
-                </a>
-              </li>
-              <li>
-                <a
-                  target="blank"
-                  href="https://wwwnc.cdc.gov/travel/notices/covid-1/coronavirus-ghana"
-                >
-                  CDC
-                </a>
-              </li>
-            </ul>
-          </>
-        )}
+      {percent >= 50 && (
+        <>
+          <Map center={location} />
+          <i className="bi bi-exclamation"></i>
+          <p className="result mt-2">
+            Based on your answers, there is a {percent}% chance that you are
+            infected, you are advised to visit the nearest health facility!
+          </p>
+        </>
+      )}
+      <div className="resources">
+        <Link to="/resources">
+          <Button>Additional Resources</Button>
+        </Link>
       </div>
     </div>
   );

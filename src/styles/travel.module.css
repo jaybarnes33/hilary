@@ -3,11 +3,35 @@
   box-sizing: border-box;
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
   padding-top: 15vh;
   overflow-x: hidden;
+  flex-direction: column;
 }
 
+.resourcesWrapper {
+  display: grid;
+  place-items: center;
+}
+
+.resourcesWrapper > div {
+  display: flex;
+  margin: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid grey;
+  padding: 1rem;
+  width: min(100%, 500px);
+}
+
+.resourcesWrapper > div a {
+  color: inherit;
+}
+
+img {
+  width: 140px;
+}
 .wrapper form {
   width: 500px;
   display: grid;

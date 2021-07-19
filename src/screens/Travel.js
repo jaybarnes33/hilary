@@ -11,10 +11,9 @@ const Travel = ({ history }) => {
   const [data, setData] = useState({});
 
   const [travelData, setTravelData] = useState({
-    travel: false,
     country: "",
   });
-
+  const [travel, setTravel] = useState(false);
   useEffect(() => {
     setData(fetchPrev());
   }, []);
@@ -63,7 +62,7 @@ const Travel = ({ history }) => {
                 name="travel"
                 className="mr-2"
                 value={true}
-                onChange={handleChange}
+                onChange={() => setTravel(true)}
               />
             </Form.Group>
             <Form.Group>
@@ -74,12 +73,12 @@ const Travel = ({ history }) => {
                 type="radio"
                 name="travel"
                 value={false}
-                onChange={handleChange}
+                onChange={() => setTravel(false)}
                 required
               />
             </Form.Group>
           </div>
-          {travelData.travel && (
+          {travel && (
             <Form.Control
               name="country"
               as="select"
