@@ -54,12 +54,6 @@ header .navbar {
   width: 100%;
 }
 
-.btn-warning {
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-}
-
 body {
   overflow-x: hidden;
 }

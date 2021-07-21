@@ -14,3 +14,9 @@
   width: 100%;
   bottom: 5rem;
 }
+
+.buttons .btn-warning {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}

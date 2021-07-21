@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "react-bootstrap";
+
 import Nav from "./Nav";
 
 const Layout = ({ children }) => {
