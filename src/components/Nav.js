@@ -11,14 +11,6 @@ const Nav = () => {
           Covid 19 Medical Diagnosis / {window.location.pathname.split("/")}
         </Link>
       </Navbar.Brand>
-
-      <Navbar.Collapse>
-        <Nav className="ml-auto">
-          <Nav.Item>
-            <Nav.Link>About</Nav.Link>
-          </Nav.Item>
-        </Nav>
-      </Navbar.Collapse>
     </Navbar>
   );
 };

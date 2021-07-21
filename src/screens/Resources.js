@@ -3,7 +3,7 @@ import React from "react";
 import Resource from "../components/Resource";
 
 import Layout from "../components/Layout";
-import resources from "../data/resources";
+
 import styles from "../styles/travel.module.css";
 
 const resourceData = [

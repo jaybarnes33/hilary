@@ -6,7 +6,6 @@ const Emergency = () => {
   return (
     <Layout>
       <div className={styles.wrapper}>
-        {" "}
         <Row>
           <Col md={12}>
             <div className="numbers">

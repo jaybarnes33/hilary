@@ -7,8 +7,10 @@
   text-align: right;
   justify-content: flex-start;
   align-items: center;
+  color: #101010;
   width: 300px;
   border-radius: 10px;
+  background-color: #f4f4f4;
 }
 
 .form-group:focus-within {
