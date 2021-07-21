@@ -16,14 +16,14 @@ const App = () => {
   return (
     <Router>
       <Route path="/" component={Home} exact />
-      <Route path="/travel" component={Travel} exact />
+      {/* <Route path="/travel" component={Travel} exact />
       <Route path="/contact" component={Contact} exact />
       <Route path="/symptoms" component={Symptoms} exact />
       <Route path="/what-to-do" component={NextSteps} exact />
       <Route path="/resources" component={Resources} exact />
       <Route path="/map" component={Map} exact />
       <Route path="/assessment" component={Assess} exact />
-      <Route path="/contacts" component={Emergency} exact />
+      <Route path="/contacts" component={Emergency} exact /> */}
     </Router>
   );
 };
