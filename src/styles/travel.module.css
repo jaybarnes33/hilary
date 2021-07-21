@@ -4,6 +4,7 @@
   background-color: white;
   min-height: 100vh;
   place-items: center;
+  padding-bottom: 5rem;
 }
 
 .buttons {
@@ -12,7 +13,7 @@
   justify-content: center;
   left: 0;
   width: 100%;
-  bottom: 5rem;
+  bottom: 2rem;
 }
 
 .buttons .btn-warning {

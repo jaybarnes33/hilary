@@ -47,7 +47,7 @@ const Symptoms = ({ history }) => {
       <div className={styles.wrapper}>
         <Header variant="warning" title="Symptoms" />
         <Form>
-          Showing any symptoms?
+          <h4>Showing any symptoms?</h4>
           <Form.Group>
             <label htmlFor="yes" className="py-2 mb-1 mr-2">
               Yes
@@ -75,7 +75,7 @@ const Symptoms = ({ history }) => {
           </Form.Group>
           {isSymptoms && (
             <div className="symptoms-wrapper">
-              <h1>Select all that apply</h1>
+              <h4>Select all that apply</h4>
 
               <Form.Group>
                 <Form.Check
