@@ -10,6 +10,7 @@ import NextSteps from "./screens/NextSteps";
 import Resources from "./screens/Resources";
 import Map from "./screens/Map";
 import Assess from "./screens/Assess";
+import Emergency from "./screens/Emergency";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
       <Route path="/resources" component={Resources} exact />
       <Route path="/map" component={Map} exact />
       <Route path="/assessment" component={Assess} exact />
+      <Route path="/contacts" component={Emergency} exact />
     </Router>
   );
 };

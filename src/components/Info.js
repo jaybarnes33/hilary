@@ -19,12 +19,18 @@ const Info = ({ data, title }) => {
       <Row>
         <Col xs={6}>
           <div className="infoWrapper">
+            <div className="icon">
+              <i className="fas fa-chart-line mr-5"></i>
+            </div>
             <h6 className="heading">Active</h6>
             <p>{data?.existing}</p>
           </div>
         </Col>
         <Col xs={6}>
           <div className="infoWrapper">
+            <div className="icon">
+              <i className="fas fa-running mr-5"></i>
+            </div>
             <h6 className="heading">Recoveries</h6>
             <p>{data?.recovered}</p>
           </div>
@@ -33,6 +39,9 @@ const Info = ({ data, title }) => {
       <Row>
         <Col xs={6}>
           <div className="infoWrapper">
+            <div className="icon">
+              <i className="fas fa-heart-broken mr-5"></i>
+            </div>
             <h6 className="heading">Deaths</h6>
             <p>{data?.deaths}</p>
           </div>
