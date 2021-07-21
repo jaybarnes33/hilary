@@ -73,81 +73,112 @@ const Symptoms = ({ history }) => {
               required
             />
           </Form.Group>
-          {isSymptoms && (
-            <div className="symptoms-wrapper">
-              <h4>Select all that apply</h4>
 
-              <Form.Group>
-                <Form.Check
-                  type="radio"
-                  name="sneezing"
-                  label="Sneezing"
-                  value={true}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Check
-                  type="radio"
-                  name="fever"
-                  label="Fever"
-                  value={true}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Check
-                  type="radio"
-                  name="sore-throat"
-                  label="Sore Throat"
-                  value={true}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Check
-                  type="radio"
-                  name="drycough"
-                  label="Cough"
-                  value={true}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Check
-                  type="radio"
-                  name="tiredness"
-                  label="Tiredness"
-                  value={true}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Check
-                  type="radio"
-                  name="loss-of-smell"
-                  label="Loss of smell and taste"
-                  value={true}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Check
-                  type="radio"
-                  name="healthworker"
-                  label="Healthworker"
-                  value={true}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-            </div>
+          {isSymptoms && (
+            <>
+              <div className="age-wrapper">
+                <h4>Are you sixty and above?</h4>
+                <Form.Group>
+                  <label htmlFor="yes" className="py-2 mb-1 mr-2">
+                    Yes
+                  </label>
+                  <Form.Check
+                    type="radio"
+                    name="over60"
+                    className="mr-2"
+                    value={true}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <label htmlFor="no" className="py-2 mb-1 mr-2">
+                    No
+                  </label>
+                  <Form.Check
+                    type="radio"
+                    name="over60"
+                    value={false}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+              </div>
+              <div className="symptoms-wrapper">
+                <h4>Select all that apply</h4>
+
+                <Form.Group>
+                  <Form.Check
+                    type="radio"
+                    name="sneezing"
+                    label="Sneezing"
+                    value={true}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Check
+                    type="radio"
+                    name="fever"
+                    label="Fever"
+                    value={true}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Check
+                    type="radio"
+                    name="sore-throat"
+                    label="Sore Throat"
+                    value={true}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Check
+                    type="radio"
+                    name="drycough"
+                    label="Cough"
+                    value={true}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Check
+                    type="radio"
+                    name="tiredness"
+                    label="Tiredness"
+                    value={true}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Check
+                    type="radio"
+                    name="loss-of-smell"
+                    label="Loss of smell and taste"
+                    value={true}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Check
+                    type="radio"
+                    name="healthworker"
+                    label="Healthworker"
+                    value={true}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+              </div>
+            </>
           )}
           <div className={styles.buttons}>
             <Button
