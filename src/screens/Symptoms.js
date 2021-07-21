@@ -68,8 +68,8 @@ const Symptoms = ({ history }) => {
             <Form.Check
               type="radio"
               name="contact"
-              value={symptoms}
-              onChange={() => setIsSymptoms(false)}
+              checked={!symptoms}
+              onChange={() => setIsSymptoms(!symptoms)}
               required
             />
           </Form.Group>
@@ -109,7 +109,7 @@ const Symptoms = ({ history }) => {
 
                 <Form.Group>
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     name="sneezing"
                     label="Sneezing"
                     value={true}
@@ -119,7 +119,7 @@ const Symptoms = ({ history }) => {
                 </Form.Group>
                 <Form.Group>
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     name="fever"
                     label="Fever"
                     value={true}
@@ -129,7 +129,7 @@ const Symptoms = ({ history }) => {
                 </Form.Group>
                 <Form.Group>
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     name="sore-throat"
                     label="Sore Throat"
                     value={true}
@@ -139,7 +139,7 @@ const Symptoms = ({ history }) => {
                 </Form.Group>
                 <Form.Group>
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     name="drycough"
                     label="Cough"
                     value={true}
@@ -149,7 +149,7 @@ const Symptoms = ({ history }) => {
                 </Form.Group>
                 <Form.Group>
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     name="tiredness"
                     label="Tiredness"
                     value={true}
@@ -159,7 +159,7 @@ const Symptoms = ({ history }) => {
                 </Form.Group>
                 <Form.Group>
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     name="loss-of-smell"
                     label="Loss of smell and taste"
                     value={true}
@@ -169,7 +169,7 @@ const Symptoms = ({ history }) => {
                 </Form.Group>
                 <Form.Group>
                   <Form.Check
-                    type="radio"
+                    type="checkbox"
                     name="healthworker"
                     label="Healthworker"
                     value={true}

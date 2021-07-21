@@ -1,14 +1,11 @@
-const { getGoogleMap } = require("../src/utils/puppeteer")
+const { getGoogleMap } = require("../src/utils/puppeteer");
 
 module.exports = async (req, res) => {
   try {
-    await getGoogleMap()
-
-    res.json({
-      message: "Hello World"
-    })
+    const location = await getGoogleMap();
+    res.json(location);
   } catch (error) {
-    console.log(error.message)
-    res.status(500).end("Something went wrong")
+    console.log(error.message);
+    res.status(500).end("Something went wrong");
   }
-}
+};

@@ -63,11 +63,11 @@ header {
   padding: 1rem;
   display: flex;
   justify-content: center;
+  gap: 20px;
   align-items: center;
   box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
   min-width: 90%;
   border-radius: 30px;
-  background-color: goldenrod;
 }
 
 .numbers h1 {
