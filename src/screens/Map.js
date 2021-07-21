@@ -1,14 +1,20 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import Header from "../components/Header";
-import MapWithAMarker from "../components/Map";
+import React, { useEffect } from "react"
+import { useState } from "react"
+import Header from "../components/Header"
+import MapWithAMarker from "../components/Map"
+import getLocation from "../utils/getLocation"
 
-import getLocation from "../utils/getLocation";
 const Map = () => {
-  const [location, setLocation] = useState({});
+  const [location, setLocation] = useState({})
+
+  console.log(location)
+
   useEffect(() => {
-    setLocation(getLocation());
-  }, []);
+    ;(async () => {
+      const userLocation = await getLocation()
+      setLocation(userLocation)
+    })()
+  }, [])
   return (
     <div>
       <Header title="Test Centers around" variant="danger" />
@@ -22,7 +28,7 @@ const Map = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Map;
+export default Map
