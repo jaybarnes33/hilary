@@ -8,6 +8,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Layout from "../components/Layout";
 
 const NextSteps = () => {
   let count = 0;
@@ -27,38 +28,40 @@ const NextSteps = () => {
 
   const percent = Math.round((count / keys.length) * 100);
   return (
-    <div className={styles.wrapper}>
-      <Header title="Next Steps" variant="danger" />
-      <div className="progress-wrapper mt-2">
-        <CircularProgressbar
-          value={percent}
-          text={`${percent}%`}
-          styles={buildStyles({
-            pathColor: percent > 50 && `red`,
-            textColor: "red",
-            trailColor: "#d6d6d6",
-            backgroundColor: "red",
-          })}
-        />
-      </div>
+    <Layout>
+      <div className={styles.wrapper}>
+        <Header title="Next Steps" variant="danger" />
+        <div className="progress-wrapper mt-2">
+          <CircularProgressbar
+            value={percent}
+            text={`${percent}%`}
+            styles={buildStyles({
+              pathColor: percent > 50 && `red`,
+              textColor: "red",
+              trailColor: "#d6d6d6",
+              backgroundColor: "red",
+            })}
+          />
+        </div>
 
-      {percent >= 50 && (
-        <>
-          {" "}
-          <i className="bi bi-exclamation"></i>
-          <p className="result mt-2">
-            Based on your answers, there is a {percent}% chance that you are
-            infected, you are advised to visit the nearest{" "}
-            <Link to="/map">health facility!</Link>
-          </p>
-        </>
-      )}
-      <div className="resources">
-        <Link to="/resources">
-          <Button>Additional Resources</Button>
-        </Link>
+        {percent >= 50 && (
+          <>
+            {" "}
+            <i className="bi bi-exclamation"></i>
+            <p className="result mt-2">
+              Based on your answers, there is a {percent}% chance that you are
+              infected, you are advised to visit the nearest{" "}
+              <Link to="/map">health facility!</Link>
+            </p>
+          </>
+        )}
+        <div className="resources">
+          <Link to="/resources">
+            <Button>Additional Resources</Button>
+          </Link>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

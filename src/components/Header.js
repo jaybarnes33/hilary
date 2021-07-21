@@ -1,12 +1,7 @@
 import React from "react";
 
-const Header = ({ title, icon, variant }) => {
-  return (
-    <header className={`bg-${variant}`}>
-      <span className="title">{title}</span>
-      <span className="icon ml-4">{icon}</span>
-    </header>
-  );
+const Header = () => {
+  return <header></header>;
 };
 
 export default Header;

@@ -4,6 +4,7 @@ import fetchPrev from "../utils/fetchPrev";
 import { useHistory } from "react-router-dom";
 import styles from "../styles/travel.module.css";
 import Header from "../components/Header";
+import Layout from "../components/Layout";
 const Symptoms = ({ history }) => {
   const { goBack } = useHistory();
   const [data, setData] = React.useState({});
@@ -42,134 +43,131 @@ const Symptoms = ({ history }) => {
     goBack();
   };
   return (
-    <div className={styles.wrapper}>
-      <Header variant="success" title="Symptoms" />
-      <Form>
-        Showing any symptoms?
-        <Form.Group>
-          <label htmlFor="yes" className="py-2 mb-1 mr-2">
-            Yes
-          </label>
-          <Form.Check
-            type="radio"
-            name="contact"
-            className="mr-2"
-            value={symptoms}
-            onChange={() => setIsSymptoms(true)}
-            required
-          />
-        </Form.Group>
-        <Form.Group>
-          <label htmlFor="no" className="py-2 mb-1 mr-2">
-            No
-          </label>
-          <Form.Check
-            type="radio"
-            name="contact"
-            value={symptoms}
-            onChange={() => setIsSymptoms(false)}
-            required
-          />
-        </Form.Group>
-        {isSymptoms && (
-          <div className="symptoms-wrapper">
-            <h1>Select all that apply</h1>
-            <Form.Group>
-              <Form.Check
-                type="radio"
-                name="over60"
-                label="Age >= 60"
-                value={true}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Check
-                type="radio"
-                name="sneezing"
-                label="Sneezing"
-                value={true}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Check
-                type="radio"
-                name="fever"
-                label="Fever"
-                value={true}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Check
-                type="radio"
-                name="sore-throat"
-                label="Sore Throat"
-                value={true}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Check
-                type="radio"
-                name="drycough"
-                label="Cough"
-                value={true}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Check
-                type="radio"
-                name="tiredness"
-                label="Tiredness"
-                value={true}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Check
-                type="radio"
-                name="loss-of-smell"
-                label="Loss of smell and taste"
-                value={true}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Check
-                type="radio"
-                name="healthworker"
-                label="Healthworker"
-                value={true}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
+    <Layout>
+      <div className={styles.wrapper}>
+        <Header variant="warning" title="Symptoms" />
+        <Form>
+          Showing any symptoms?
+          <Form.Group>
+            <label htmlFor="yes" className="py-2 mb-1 mr-2">
+              Yes
+            </label>
+            <Form.Check
+              type="radio"
+              name="contact"
+              className="mr-2"
+              value={symptoms}
+              onChange={() => setIsSymptoms(true)}
+              required
+            />
+          </Form.Group>
+          <Form.Group>
+            <label htmlFor="no" className="py-2 mb-1 mr-2">
+              No
+            </label>
+            <Form.Check
+              type="radio"
+              name="contact"
+              value={symptoms}
+              onChange={() => setIsSymptoms(false)}
+              required
+            />
+          </Form.Group>
+          {isSymptoms && (
+            <div className="symptoms-wrapper">
+              <h1>Select all that apply</h1>
+
+              <Form.Group>
+                <Form.Check
+                  type="radio"
+                  name="sneezing"
+                  label="Sneezing"
+                  value={true}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Check
+                  type="radio"
+                  name="fever"
+                  label="Fever"
+                  value={true}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Check
+                  type="radio"
+                  name="sore-throat"
+                  label="Sore Throat"
+                  value={true}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Check
+                  type="radio"
+                  name="drycough"
+                  label="Cough"
+                  value={true}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Check
+                  type="radio"
+                  name="tiredness"
+                  label="Tiredness"
+                  value={true}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Check
+                  type="radio"
+                  name="loss-of-smell"
+                  label="Loss of smell and taste"
+                  value={true}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Check
+                  type="radio"
+                  name="healthworker"
+                  label="Healthworker"
+                  value={true}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+            </div>
+          )}
+          <div className={styles.buttons}>
+            <Button
+              variant="warning"
+              className="mr-4 next"
+              onClick={handlePrev}
+            >
+              Back
+            </Button>
+            <Button
+              variant="warning"
+              className="next"
+              onClick={() => handleNext("what-to-do")}
+            >
+              Submit
+            </Button>
           </div>
-        )}
-        <div className={styles.buttons}>
-          <Button variant="success" className="mr-4 next" onClick={handlePrev}>
-            Back
-          </Button>
-          <Button
-            variant="success"
-            className="next"
-            onClick={() => handleNext("what-to-do")}
-          >
-            Submit
-          </Button>
-        </div>
-      </Form>
-    </div>
+        </Form>
+      </div>
+    </Layout>
   );
 };
 

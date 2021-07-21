@@ -1,0 +1,10 @@
+.container {
+  margin-top: 3rem;
+  display: grid;
+  min-height: 90vh;
+  gap: 30px;
+}
+
+.heading {
+  font-weight: bold;
+}
