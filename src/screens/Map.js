@@ -1,37 +1,36 @@
-import axios from "axios"
-import React, { useEffect } from "react"
-import { useState } from "react"
-import Header from "../components/Header"
-import MapWithAMarker from "../components/Map"
-import getLocation from "../utils/getLocation"
+import axios from "axios";
+import React, { useEffect } from "react";
+import { useState } from "react";
+import Header from "../components/Header";
+import MapWithAMarker from "../components/Map";
+import getLocation from "../utils/getLocation";
 
 const Map = () => {
-  const [location, setLocation] = useState({})
-  const [loading, setLoading] = useState(true)
-  const [locations, setLocations] = useState({})
+  const [location, setLocation] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [locations, setLocations] = useState({});
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       try {
-        const { data } = await axios.get("/api/geolocation")
-        setLocations(data)
+        const { data } = await axios.get("/api/geolocation");
+        setLocations(data);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    })()
+    })();
 
     const watchID = navigator.geolocation.watchPosition(
       ({ coords }) =>
         setLocation({ lat: coords.latitude, lng: coords.longitude }),
       undefined,
       { enableHighAccuracy: true, maximumAge: 2000, timeout: 5000 }
-    )
+    );
 
-    return () => navigator.geolocation.clearWatch(watchID)
-  }, [])
-  console.log(location)
+    return () => navigator.geolocation.clearWatch(watchID);
+  }, []);
 
   return (
     <div>
@@ -49,7 +48,7 @@ const Map = () => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Map
+export default Map;
