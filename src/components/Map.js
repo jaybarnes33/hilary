@@ -2,15 +2,17 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker,
-} from "react-google-maps";
+  Marker
+} from "react-google-maps"
 
 const MapWithAMarker = withScriptjs(
-  withGoogleMap(({ defaultCenter }) => (
+  withGoogleMap(({ defaultCenter, locations }) => (
     <GoogleMap defaultZoom={8} defaultCenter={defaultCenter}>
-      <Marker position={defaultCenter} />
+      {Object.values(locations).map(([lat, lng], index) => (
+        <Marker key={index} position={{ lat, lng }} />
+      ))}
     </GoogleMap>
   ))
-);
+)
 
-export default MapWithAMarker;
+export default MapWithAMarker
