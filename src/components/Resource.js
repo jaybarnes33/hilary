@@ -3,11 +3,11 @@ import React from "react";
 const Educational = ({ data }) => {
   return (
     <div className="educational">
-      {data.href.map((item) => (
+      <h3>{data.title}</h3>
+      {data.href.map((item, index) => (
         <div>
-          <a href={item}>
-            <div className="icon-right">{data.icon}</div>
-            <h3>{data.title}</h3>
+          <a href={item} target="_blank" rel="noreferrer">
+            {index + 1} - {data.title}
           </a>
         </div>
       ))}
