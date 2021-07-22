@@ -10,9 +10,14 @@ const resourceData = [
   {
     title: "About Covid 19",
     href: [
-      "https://www.who.int/emergencies/diseases/novel-coronavirus-2019",
-      "https://www.ghanahealthservice.org/covid19/",
-      "https://www.ghanahealthservice.org/covid19/",
+      {
+        title: " WHO ",
+        url: "https://www.who.int/emergencies/diseases/novel-coronavirus-2019",
+      },
+      {
+        title: " Ghana Health Service ",
+        url: "https://www.ghanahealthservice.org/covid19/",
+      },
     ],
     icon: <i className="fas fa-virus"></i>,
   },

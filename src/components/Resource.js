@@ -6,8 +6,8 @@ const Educational = ({ data }) => {
       <h3>{data.title}</h3>
       {data.href.map((item, index) => (
         <div>
-          <a href={item} target="_blank" rel="noreferrer">
-            {index + 1} - {data.title}
+          <a href={item.url ? item.url : item} target="_blank" rel="noreferrer">
+            {item.title ? item.title : data.title}
           </a>
         </div>
       ))}
